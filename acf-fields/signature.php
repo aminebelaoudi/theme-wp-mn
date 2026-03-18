@@ -21,13 +21,8 @@ Block::make( __( 'MBNL — Signature', 'mbnl' ) )
             ->set_default_value( 'Chaque projet porte notre exigence. Pas de compromis sur l\'alignement, les matériaux et la finition.' ),
         Field::make( 'complex', 'signature_pillars', __( 'Piliers (cartes)', 'mbnl' ) )
             ->add_fields( array(
-                Field::make( 'select', 'icon', __( 'Icône', 'mbnl' ) )
-                    ->set_options( array(
-                        'ruler'        => 'Ruler (précision)',
-                        'layers'       => 'Layers (joints)',
-                        'hard-hat'     => 'Hard Hat (chantier)',
-                        'shield-check' => 'Shield (garantie)',
-                    ) ),
+                Field::make( 'text', 'icon', __( 'Icône (nom Lucide)', 'mbnl' ) )
+                    ->set_default_value( 'ruler' ),
                 Field::make( 'text', 'title', __( 'Titre', 'mbnl' ) ),
                 Field::make( 'textarea', 'desc', __( 'Description', 'mbnl' ) )
                     ->set_rows( 2 ),
