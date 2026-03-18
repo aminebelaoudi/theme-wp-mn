@@ -1,0 +1,21 @@
+# ─── Node / build tools ──────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# ─── IDE & OS ────────────────────────────────────────────────
+.idea/
+.vscode/
+*.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── WordPress specifics ─────────────────────────────────────
+*.log
+*.sql
+*.sql.gz
+wp-config.php
+
+# ─── Build artefacts ─────────────────────────────────────────
+dist/
+*.map
