@@ -23,6 +23,9 @@ Block::make( __( 'MBNL — Contact CTA', 'mbnl' ) )
         Field::make( 'text', 'contact_phone', __( 'Numéro de téléphone', 'mbnl' ) )
             ->set_default_value( '+15141234567' )
             ->set_help_text( 'Format : +1XXXXXXXXXX' ),
+        Field::make( 'text', 'contact_form_url', __( 'URL du formulaire (iframe)', 'mbnl' ) )
+            ->set_default_value( 'https://link.mbnl.ca/widget/form/moH2hI2EPNdYvgteSxeN' )
+            ->set_help_text( 'URL GHL / Typeform / etc. à embarquer dans le modal.' ),
     ) )
     ->set_render_callback( function ( $fields ) {
         include get_template_directory() . '/template-parts/contact-cta.php';

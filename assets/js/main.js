@@ -1,3 +1,70 @@
+// ─── Drawer Logic — data-modal-open="{id}" ou <a href="#{id}"> ────────────────
+(function () {
+    function openModal(modal) {
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        var closeBtn = modal.querySelector('.mbnl-modal-close');
+        if (closeBtn) { setTimeout(function () { closeBtn.focus(); }, 50); }
+    }
+
+    function closeModal(modal) {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+    }
+
+    function openByHash(hash) {
+        if (!hash) return;
+        var id = hash.replace(/^#/, '');
+        var modal = document.getElementById(id);
+        if (modal && modal.classList.contains('mbnl-modal')) openModal(modal);
+    }
+
+    // Ouvrir via data-modal-open ou <a href="#id">
+    document.addEventListener('click', function (e) {
+        // data-modal-open
+        var trigger = e.target.closest('[data-modal-open]');
+        if (trigger) {
+            e.preventDefault();
+            var modal = document.getElementById(trigger.getAttribute('data-modal-open'));
+            if (modal) openModal(modal);
+            return;
+        }
+
+        // <a href="#id"> pointant vers un .mbnl-modal
+        var link = e.target.closest('a[href^="#"]');
+        if (link) {
+            var target = document.getElementById(link.getAttribute('href').slice(1));
+            if (target && target.classList.contains('mbnl-modal')) {
+                e.preventDefault();
+                openModal(target);
+                return;
+            }
+        }
+
+        // Fermer — bouton close ou overlay
+        if (e.target.closest('.mbnl-modal-close') || e.target.classList.contains('mbnl-modal-overlay')) {
+            var modal = e.target.closest('.mbnl-modal');
+            if (modal) closeModal(modal);
+        }
+    });
+
+    // Fermer avec Escape
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.mbnl-modal.is-open').forEach(closeModal);
+        }
+    });
+
+    // Ouvrir automatiquement si l'URL contient le hash au chargement
+    document.addEventListener('DOMContentLoaded', function () {
+        openByHash(window.location.hash);
+    });
+
+    // Ouvrir si le hash change en cours de navigation
+    window.addEventListener('hashchange', function () {
+        openByHash(window.location.hash);
+    });
+}());
 /**
  * MBNL Theme — Main JavaScript
  */
