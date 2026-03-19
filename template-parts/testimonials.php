@@ -19,21 +19,10 @@ if ( empty( $testi_items ) ) {
             <h2 class="section-title text-center mb-16"><?php echo esc_html( $testi_title ); ?></h2>
         </div>
 
-        <div class="testimonials-grid">
-            <?php foreach ( $testi_items as $i => $t ) : ?>
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="<?php echo $i * 150; ?>">
-                    <div class="testimonial-stars">
-                        <?php for ( $j = 0; $j < 5; $j++ ) : ?>
-                            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <?php endfor; ?>
-                    </div>
-                    <blockquote class="testimonial-quote">&ldquo;<?php echo esc_html( $t['quote'] ); ?>&rdquo;</blockquote>
-                    <div class="testimonial-author">
-                        <p class="testimonial-name"><?php echo esc_html( $t['author'] ); ?></p>
-                        <p class="testimonial-location"><?php echo esc_html( $t['location'] ); ?></p>
-                    </div>
-                </div>
-            <?php endforeach; ?>
+        <!-- Google Reviews Widget -->
+        <div class="testimonials-widget" data-aos="fade-up">
+            <script type="text/javascript" src="https://link.mbnl.ca/reputation/assets/review-widget.js"></script>
+            <iframe class="lc_reviews_widget" src="https://link.mbnl.ca/reputation/widgets/review_widget/CU0M7TQn9KbVeP5bzYNV" frameborder="0" scrolling="no" style="min-width: 100%; width: 100%;"></iframe>
         </div>
     </div>
 </section>
