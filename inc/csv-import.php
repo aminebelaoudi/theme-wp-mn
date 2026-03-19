@@ -118,6 +118,13 @@ function mbnl_build_post_content( $row, $headers ) {
             if ( in_array( $field, $complex_fields, true ) && $value !== '' ) {
                 $decoded = json_decode( $value, true );
                 if ( is_array( $decoded ) ) {
+                    // Carbon Fields requires _type on each complex entry for Gutenberg editor
+                    foreach ( $decoded as &$entry ) {
+                        if ( is_array( $entry ) && ! isset( $entry['_type'] ) ) {
+                            $entry['_type'] = '_';
+                        }
+                    }
+                    unset( $entry );
                     $value = $decoded;
                 }
             }
