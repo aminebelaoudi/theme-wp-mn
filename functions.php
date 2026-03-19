@@ -9,6 +9,9 @@ if ( file_exists( $mbnl_autoload ) ) {
     require_once $mbnl_autoload;
 }
 
+// ─── CSV Import (admin) ─────────────────────────────────────
+require_once get_template_directory() . '/inc/csv-import.php';
+
 // ─── Theme Setup ────────────────────────────────────────────
 function mbnl_setup() {
     add_theme_support( 'title-tag' );
