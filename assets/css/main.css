@@ -1723,6 +1723,235 @@ a {
 }
 
 /* ═══════════════════════════════════════════════════════════
+   SERVICES PAR VILLE — Light style (Signature-like)
+   ═══════════════════════════════════════════════════════════ */
+.section-sv {
+    position: relative;
+    padding: 8rem 0;
+    background: linear-gradient(to bottom, hsl(30, 10%, 97%), hsl(30, 8%, 94%));
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .section-sv {
+        padding: 11rem 0;
+    }
+}
+
+/* Decorative blobs */
+.sv-blob {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.sv-blob--right {
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 500px;
+    background: rgba(180, 20, 20, 0.03);
+    filter: blur(120px);
+    transform: translate(33%, -25%);
+}
+
+.sv-blob--left {
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    background: rgba(180, 20, 20, 0.02);
+    filter: blur(100px);
+    transform: translate(-33%, 25%);
+}
+
+/* ─── Header (Signature pattern) ───────────────────────── */
+.sv-header {
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .sv-header {
+        margin-bottom: 4rem;
+    }
+}
+
+.sv-label-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.sv-line {
+    display: block;
+    height: 1px;
+    width: 3rem;
+    background: var(--accent);
+}
+
+.sv-label {
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+}
+
+.sv-main-title {
+    font-size: clamp(2.25rem, 6vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--foreground);
+    line-height: 1.05;
+}
+
+/* ─── Separator ────────────────────────────────────────── */
+.sv-separator {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(18, 18, 18, 0.1), transparent);
+    margin-bottom: 4rem;
+}
+
+/* ─── City block ───────────────────────────────────────── */
+.sv-city-block {
+    margin-bottom: 2rem;
+}
+
+.sv-city-header {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    margin-bottom: 1.5rem;
+}
+
+.sv-city-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.75rem;
+    background: rgba(180, 20, 20, 0.08);
+    flex-shrink: 0;
+}
+
+.sv-city-icon svg,
+.sv-city-icon i {
+    color: var(--accent);
+    stroke: var(--accent);
+}
+
+.sv-city-name {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--foreground);
+    line-height: 1.15;
+}
+
+/* ─── City divider ─────────────────────────────────────── */
+.sv-city-divider {
+    height: 1px;
+    background: linear-gradient(to right, rgba(18, 18, 18, 0.06), rgba(18, 18, 18, 0.1), rgba(18, 18, 18, 0.06));
+    margin: 2rem 0;
+}
+
+/* ─── Pages grid ───────────────────────────────────────── */
+.sv-pages-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+    .sv-pages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.875rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .sv-pages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* ─── Page cards ───────────────────────────────────────── */
+.sv-page-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(18, 18, 18, 0.04);
+    text-decoration: none;
+    transition: transform 0.5s var(--ease-spring),
+                box-shadow 0.5s var(--ease-out),
+                border-color 0.5s var(--ease-out);
+}
+
+.sv-page-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08);
+    border-color: rgba(180, 20, 20, 0.12);
+}
+
+.sv-page-title {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--foreground);
+    letter-spacing: -0.01em;
+    transition: color 0.3s var(--ease-out);
+}
+
+.sv-page-card:hover .sv-page-title {
+    color: var(--accent);
+}
+
+.sv-page-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: rgba(180, 20, 20, 0.08);
+    flex-shrink: 0;
+    transition: background 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+
+.sv-page-arrow svg,
+.sv-page-arrow i {
+    color: var(--accent);
+    stroke: var(--accent);
+    transition: color 0.3s, stroke 0.3s;
+}
+
+.sv-page-card:hover .sv-page-arrow {
+    background: var(--accent);
+    transform: scale(1.1);
+}
+
+.sv-page-card:hover .sv-page-arrow svg,
+.sv-page-card:hover .sv-page-arrow i {
+    color: #ffffff;
+    stroke: #ffffff;
+}
+
+/* ─── Empty state ──────────────────────────────────────── */
+.sv-empty {
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    font-style: italic;
+    padding: 2rem 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
    REGIONS SECTION (Zones desservies) — Dark BG
    ═══════════════════════════════════════════════════════════ */
 .section-regions {

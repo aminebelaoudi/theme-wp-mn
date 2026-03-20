@@ -58,10 +58,10 @@ $about_stats     = ! empty( $f['about_stats'] )      ? $f['about_stats']     : a
 
                 <!-- CTA -->
                 <div class="about-cta" data-aos="fade-up" data-aos-delay="500">
-                    <a href="<?php echo esc_url( $about_cta_url ); ?>" class="btn btn-cta btn-lg btn-rounded">
+                    <button class="btn btn-cta btn-lg btn-rounded" data-modal-open="formsoumission">
                         <?php echo esc_html( $about_cta_label ); ?>
                         <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>

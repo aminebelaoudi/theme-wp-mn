@@ -32,6 +32,7 @@ function mbnl_get_block_names() {
         'realisations'  => 'carbon-fields/mbnl-realisations',
         'services'      => 'carbon-fields/mbnl-services',
         'regions'       => 'carbon-fields/mbnl-regions',
+        'services-villes' => 'carbon-fields/mbnl-services-par-ville',
         'contact'       => 'carbon-fields/mbnl-contact-cta',
         'faq'           => 'carbon-fields/mbnl-faq',
         'why'           => 'carbon-fields/mbnl-pourquoi',
