@@ -33,7 +33,7 @@
                 'walker'         => new MBNL_Nav_Walker(),
             ) );
             ?>
-            <a href="#contact" class="btn btn-cta btn-sm btn-rounded">Demander une soumission</a>
+            <button class="btn btn-cta btn-sm btn-rounded" data-modal-open="formsoumission">Demander une soumission</button>
         </div>
 
         <!-- Mobile toggle -->
@@ -60,7 +60,7 @@
                 'walker'         => new MBNL_Mobile_Nav_Walker(),
             ) );
             ?>
-            <a href="#contact" class="btn btn-cta btn-rounded" style="margin-top: 0.5rem;">Demander une soumission</a>
+            <button class="btn btn-cta btn-rounded" data-modal-open="formsoumission" style="margin-top: 0.5rem;">Demander une soumission</button>
         </div>
     </div>
 </header>

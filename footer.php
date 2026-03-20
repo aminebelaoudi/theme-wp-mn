@@ -8,8 +8,8 @@
 // ─── Lire les options Carbon Fields ──────────────────────────
 $ft_tagline      = carbon_get_theme_option( 'footer_tagline' )      ?: 'Maçonnerie &amp; Béton New Look — Experts en briques, pierres naturelles et blocs de béton depuis plus de 20&nbsp;ans.';
 $ft_email        = carbon_get_theme_option( 'footer_email' )        ?: 'info@mbnl.ca';
-$ft_phone        = carbon_get_theme_option( 'footer_phone' )        ?: '+1 514 123-4567';
-$ft_phone_raw    = carbon_get_theme_option( 'footer_phone_raw' )    ?: '+15141234567';
+$ft_phone        = carbon_get_theme_option( 'footer_phone' )        ?: '438.225.2169';
+$ft_phone_raw    = carbon_get_theme_option( 'footer_phone_raw' )    ?: '+14382252169';
 $ft_address      = carbon_get_theme_option( 'footer_address' )      ?: 'Montréal, QC';
 $ft_facebook     = carbon_get_theme_option( 'footer_facebook' );
 $ft_instagram    = carbon_get_theme_option( 'footer_instagram' );
@@ -124,6 +124,34 @@ if ( empty( $ft_sectors ) ) {
 
     </div>
 </footer>
+
+<?php
+// ─── Modal formulaire global (disponible sur toutes les pages) ───
+$modal_form_url = carbon_get_theme_option( 'footer_form_url' );
+if ( ! $modal_form_url ) {
+    $modal_form_url = 'https://link.mbnl.ca/widget/form/moH2hI2EPNdYvgteSxeN';
+}
+?>
+<!-- Drawer Formulaire Contact — global -->
+<div id="formsoumission" class="mbnl-modal" aria-modal="true" role="dialog" aria-label="Demander une soumission">
+    <div class="mbnl-modal-overlay" role="button" tabindex="-1" aria-label="Fermer"></div>
+    <div class="mbnl-modal-content">
+        <div class="mbnl-modal-header">
+            <span class="mbnl-modal-title">Demander une soumission</span>
+            <button class="mbnl-modal-close" aria-label="Fermer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="mbnl-modal-body">
+            <iframe
+                src="<?php echo esc_url( $modal_form_url ); ?>"
+                title="Demander une soumission"
+                loading="lazy"
+            ></iframe>
+            <script src="https://link.mbnl.ca/js/form_embed.js"></script>
+        </div>
+    </div>
+</div>
 
 <?php wp_footer(); ?>
 </body>

@@ -21,18 +21,25 @@ Container::make( 'theme_options', __( 'Options du footer', 'mbnl' ) )
             ->set_attribute( 'type', 'email' ),
 
         Field::make( 'text', 'footer_phone', __( 'Numéro de téléphone (affiché)', 'mbnl' ) )
-            ->set_default_value( '+1 514 123-4567' )
-            ->set_help_text( 'Ex : +1 514 123-4567' ),
+            ->set_default_value( '438.225.2169' )
+            ->set_help_text( 'Ex : 438.225.2169' ),
 
         Field::make( 'text', 'footer_phone_raw', __( 'Numéro de téléphone (lien tel:)', 'mbnl' ) )
-            ->set_default_value( '+15141234567' )
-            ->set_help_text( 'Sans espaces ni tirets. Ex : +15141234567' ),
+            ->set_default_value( '+14382252169' )
+            ->set_help_text( 'Sans espaces ni tirets. Ex : +14382252169' ),
 
         Field::make( 'text', 'footer_address', __( 'Adresse / Ville', 'mbnl' ) )
             ->set_default_value( 'Montréal, QC' ),
 
     ) )
-    ->add_tab( __( '🔗 Réseaux sociaux', 'mbnl' ), array(
+    ->add_tab( __( '� Formulaire', 'mbnl' ), array(
+
+        Field::make( 'text', 'footer_form_url', __( 'URL du formulaire de soumission', 'mbnl' ) )
+            ->set_default_value( 'https://link.mbnl.ca/widget/form/moH2hI2EPNdYvgteSxeN' )
+            ->set_help_text( 'URL GHL / Typeform / etc. embarquée dans le modal global "Demander une soumission".' ),
+
+    ) )
+    ->add_tab( __( '�🔗 Réseaux sociaux', 'mbnl' ), array(
 
         Field::make( 'text', 'footer_facebook', __( 'URL Facebook', 'mbnl' ) )
             ->set_attribute( 'placeholder', 'https://facebook.com/...' ),
