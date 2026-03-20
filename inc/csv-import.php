@@ -31,6 +31,7 @@ function mbnl_get_block_names() {
         'process'       => 'carbon-fields/mbnl-processus',
         'realisations'  => 'carbon-fields/mbnl-realisations',
         'services'      => 'carbon-fields/mbnl-services',
+        'regions'       => 'carbon-fields/mbnl-regions',
         'contact'       => 'carbon-fields/mbnl-contact-cta',
         'faq'           => 'carbon-fields/mbnl-faq',
         'why'           => 'carbon-fields/mbnl-pourquoi',
@@ -59,6 +60,9 @@ function mbnl_get_section_fields() {
         ),
         'realisations' => array(
             'realisations_label', 'realisations_title',
+        ),
+        'regions' => array(
+            'regions_label', 'regions_title', 'regions_desc',
         ),
         'contact' => array(
             'contact_label', 'contact_title', 'contact_desc',

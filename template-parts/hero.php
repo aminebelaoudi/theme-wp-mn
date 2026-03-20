@@ -36,7 +36,7 @@ $hero_image           = ! empty( $f['hero_image'] )           ? wp_get_attachmen
         </p>
 
         <div class="hero-actions" data-aos="fade-up" data-aos-delay="800">
-            <a href="<?php echo esc_url( $hero_cta_url ); ?>" class="btn btn-cta btn-lg btn-rounded"><?php echo esc_html( $hero_cta_label ); ?></a>
+            <button class="btn btn-cta btn-lg btn-rounded" data-modal-open="formsoumission"><?php echo esc_html( $hero_cta_label ); ?></button>
             <a href="<?php echo esc_url( $hero_secondary_url ); ?>" class="btn btn-outline-light btn-lg btn-rounded"><?php echo esc_html( $hero_secondary_label ); ?></a>
         </div>
     </div>
