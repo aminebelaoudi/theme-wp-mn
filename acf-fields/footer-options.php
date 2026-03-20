@@ -10,6 +10,23 @@ Container::make( 'theme_options', __( 'Options du footer', 'mbnl' ) )
     ->set_page_parent( 'themes.php' )
     ->set_icon( 'dashicons-admin-links' )
     ->set_page_menu_title( __( 'Footer', 'mbnl' ) )
+    ->add_tab( __( '🏷️ Logo', 'mbnl' ), array(
+
+        Field::make( 'image', 'header_logo_image', __( 'Logo image (header & footer)', 'mbnl' ) )
+            ->set_help_text( 'Si renseigné, remplace le texte du logo. Formats recommandés : SVG ou PNG transparent.' ),
+
+        Field::make( 'text', 'header_logo_text', __( 'Texte du logo (fallback)', 'mbnl' ) )
+            ->set_default_value( 'MBNL' )
+            ->set_help_text( 'Affiché si aucune image n\'est choisie.' ),
+
+        Field::make( 'text', 'header_logo_max_width', __( 'Largeur maximale du logo (px)', 'mbnl' ) )
+            ->set_default_value( '160' )
+            ->set_attribute( 'type', 'number' )
+            ->set_attribute( 'min', '40' )
+            ->set_attribute( 'max', '600' )
+            ->set_help_text( 'Valeur en pixels. Défaut : 160.' ),
+
+    ) )
     ->add_tab( __( '📞 Contact', 'mbnl' ), array(
 
         Field::make( 'text', 'footer_tagline', __( 'Accroche sous le logo', 'mbnl' ) )

@@ -13,7 +13,20 @@
 <header id="site-header" class="site-header">
     <nav class="nav-container container">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-logo">
-            <span class="logo-text">MBNL</span>
+            <?php
+            $logo_img_id   = carbon_get_theme_option( 'header_logo_image' );
+            $logo_text     = carbon_get_theme_option( 'header_logo_text' ) ?: 'MBNL';
+            $logo_max_w    = (int) ( carbon_get_theme_option( 'header_logo_max_width' ) ?: 160 );
+            if ( $logo_img_id ) :
+                echo wp_get_attachment_image( (int) $logo_img_id, 'full', false, array(
+                    'class' => 'logo-img',
+                    'alt'   => esc_attr( get_bloginfo( 'name' ) ),
+                    'style' => 'max-width:' . $logo_max_w . 'px',
+                ) );
+            else :
+                ?><span class="logo-text"><?php echo esc_html( $logo_text ); ?></span><?php
+            endif;
+            ?>
         </a>
 
         <!-- Desktop nav -->

@@ -339,6 +339,14 @@ a {
     letter-spacing: -0.025em;
 }
 
+.logo-img {
+    display: block;
+    height: 2.5rem;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+}
+
 /* Nav links — default state (transparent header = white text) */
 .nav-link {
     font-size: 0.875rem;
