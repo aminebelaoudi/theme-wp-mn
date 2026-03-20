@@ -26,6 +26,7 @@ add_action( 'admin_menu', function () {
 function mbnl_get_block_names() {
     return array(
         'hero'          => 'carbon-fields/mbnl-hero',
+        'about'         => 'carbon-fields/mbnl-a-propos',
         'signature'     => 'carbon-fields/mbnl-signature',
         'process'       => 'carbon-fields/mbnl-processus',
         'realisations'  => 'carbon-fields/mbnl-realisations',
@@ -44,6 +45,10 @@ function mbnl_get_section_fields() {
             'hero_subtitle', 'hero_title', 'hero_description',
             'hero_cta_label', 'hero_cta_url',
             'hero_secondary_label', 'hero_secondary_url',
+        ),
+        'about' => array(
+            'about_label', 'about_title', 'about_text',
+            'about_cta_label', 'about_cta_url',
         ),
         'signature' => array(
             'signature_label', 'signature_title', 'signature_desc',
