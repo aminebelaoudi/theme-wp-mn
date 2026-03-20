@@ -26,6 +26,13 @@ Container::make( 'theme_options', __( 'Options du footer', 'mbnl' ) )
             ->set_attribute( 'max', '600' )
             ->set_help_text( 'Valeur en pixels. Défaut : 160.' ),
 
+        Field::make( 'text', 'header_logo_max_height', __( 'Hauteur maximale du logo (px)', 'mbnl' ) )
+            ->set_default_value( '' )
+            ->set_attribute( 'type', 'number' )
+            ->set_attribute( 'min', '20' )
+            ->set_attribute( 'max', '300' )
+            ->set_help_text( 'Optionnel. Laissez vide pour une hauteur automatique.' ),
+
     ) )
     ->add_tab( __( '📞 Contact', 'mbnl' ), array(
 

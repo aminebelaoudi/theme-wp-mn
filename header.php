@@ -17,11 +17,14 @@
             $logo_img_id   = carbon_get_theme_option( 'header_logo_image' );
             $logo_text     = carbon_get_theme_option( 'header_logo_text' ) ?: 'MBNL';
             $logo_max_w    = (int) ( carbon_get_theme_option( 'header_logo_max_width' ) ?: 160 );
+            $logo_max_h    = (int) carbon_get_theme_option( 'header_logo_max_height' );
+            $logo_style    = 'max-width:' . $logo_max_w . 'px;';
+            if ( $logo_max_h > 0 ) $logo_style .= 'max-height:' . $logo_max_h . 'px;';
             if ( $logo_img_id ) :
                 echo wp_get_attachment_image( (int) $logo_img_id, 'full', false, array(
                     'class' => 'logo-img',
                     'alt'   => esc_attr( get_bloginfo( 'name' ) ),
-                    'style' => 'max-width:' . $logo_max_w . 'px',
+                    'style' => $logo_style,
                 ) );
             else :
                 ?><span class="logo-text"><?php echo esc_html( $logo_text ); ?></span><?php
